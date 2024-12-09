@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h1>String Processor</h1>
+    <div class="input-section">
+        <textarea id="input-text" placeholder="Enter your text here..."></textarea>
+        <select id="operation" class="form-select">
+            <option value="remove_duplicates">Remove Duplicates</option>
+            <option value="capitalize_words">Capitalize Words</option>
+            <option value="count_words">Count Words</option>
+            <option value="to_camel_case">To Camel Case</option>
+            <option value="find_all_occurrences">Find All Occurrences</option>
+            <option value="remove_punctuation">Remove Punctuation</option>
+            <option value="count_unique_chars">Count Unique Characters</option>
+            <option value="reverse_string">Reverse String</option>
+            <option value="count_vowels">Count Vowels</option>
+            <option value="is_palindrome">Check Palindrome</option>
+        </select>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-3">
+            <button onclick="processText()" class="btn btn-primary btn-process">Process</button>
+            <button onclick="copyToClipboard()" class="btn btn-secondary">Copy Result</button>
+        </div>
+    </div>
+    <div class="output-section">
+        <h2>Result:</h2>
+        <div id="result" class="result-fade p-3"></div>
+    </div>
+    
+    <div class="history-section mt-4">
+        <h3>Recent Operations</h3>
+        <div id="history-list" class="list-group">
+            <!-- History items will be inserted here by JavaScript -->
+        </div>
+    </div>
+</div>
+{% endblock %}
